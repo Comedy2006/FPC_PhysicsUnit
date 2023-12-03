@@ -1,0 +1,91 @@
+unit physics;
+
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Math;
+
+function velocity(s,t: double):double;
+function density(m,V: double):double;
+function FtoC(C: double):double;
+function CtoF(F: double): double;
+function CtoK(C: double): double;
+function KtoC(K: double): double;
+function torque(N,m: double): double;
+function acceleration(m,s: double): double;
+function angmom(N,m,s: double): double;
+function rotspeed(s: double): double;
+function sarea(m: double): double;
+function impulse(kg,m,s: double): double;
+function volume(m: double): double;
+
+implementation
+function velocity(s,t: double):double;
+begin
+  velocity := s/t;
+end;
+
+function density(m,V: double):double;
+begin
+  density := m*V;
+end;
+
+function CtoF(F: double): double;
+begin
+  CtoF := F * 1.8 + 32;
+end;
+
+function FtoC(F: double): double;
+begin
+  FtoC := (F - 32) * (5/9);
+end;
+
+function CtoK(C: double): double;
+begin
+  CtoK := C + 273.15;
+end;
+
+function KtoC(K: double): double;
+begin
+  KtoC := K - 273.15;
+end;
+
+function torque(N,m: double): double;
+begin
+  torque := N/m;
+end;
+
+function acceleration(m,s: double): double;
+begin
+  acceleration:= m/(s*s);
+end;
+
+function angmom(N,m,s: double): double;
+begin
+  angmom := N*m*s;
+end;
+
+function rotspeed(s: double): double;
+begin
+  rotspeed := 1/s;
+end;
+
+function sarea(m: double): double;
+begin
+  sarea := m*m;
+end;
+
+function impulse(kg,m,s: double): double;
+begin
+  impulse := (kg*m)/s;
+end;
+
+function volume(m: double): double;
+begin
+  volume := m*m*m;
+end;
+
+end.
+
