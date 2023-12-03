@@ -2,7 +2,7 @@
 
 This repository contains functions for physical calculations.
 
-The following functions are suported:
+The following functions are supported:
 
 `velocity(double, double)`: Calculates velocity<br>
 `density(double, double)`: Calculates density<br>
